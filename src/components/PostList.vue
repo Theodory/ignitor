@@ -1,12 +1,12 @@
 <template>
 	<div>
-		Ok
+		Post
 	</div>
 </template>
 
 <script>
 	export default	{
-		name'PostList',
+		name: 'PostList',
 	}
 	
 </script>

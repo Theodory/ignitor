@@ -5,27 +5,13 @@
     <b-navbar-brand href="#">IGNITOR APP</b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
-       <!--  <router-link class="nav-link" to="/" exact>Home</router-link>
-        <router-link class="nav-link" to="/food">Food</router-link>
-        <router-link class="nav-link" to="/fashion">Fashion</router-link>
-        <router-link class="nav-link" to="/beauty">Beauty</router-link> -->
+        <router-link class="nav-link" to="/" exact>Home</router-link>
+        <router-link class="nav-link" to="/post">Post</router-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
+   <router-view></router-view>
 
   <b-container>  </b-container>
 </div>
 </template>
-
-<script>
-
-  export default {
-    name: 'app',
-    components: {
-    }
-  }
-</script>
-
-<style>
-
-</style>
