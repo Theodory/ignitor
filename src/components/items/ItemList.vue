@@ -21,10 +21,6 @@
 			};
 		},
 		name: 'items',
-		data() {
-			return {
-			};
-		},
 		components: {
 			Items
 		},
