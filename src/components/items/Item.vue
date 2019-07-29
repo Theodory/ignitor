@@ -4,25 +4,23 @@
 			<b-col class="text-center"> <div class="lds-dual-ring"></div> </b-col>
 		</b-row>
 	</div>
-	<div v-else-if="!loading">
-		<b-card
-		tag="article"
-		v-for="item in items"
-		:key="item.id"
-		:title="item.title"
-		:img-src="item.thumbnailUrl"
-		:img-alt="item.url"
-		img-top
-		style="max-width: 20rem;"
-		class="mb-2"
-		>
-		<b-card-text>
-			
-		</b-card-text>
+	<b-row  v-else-if="!loading">
+		<b-col>
+			<b-card
+			tag="article"
+			v-for="item in items"
+			:key="item.id"
+			:title="item.title"
+			class="mb-2"
+			>
+			<b-card-text>
+				{{item.body}}
+			</b-card-text>
 
-		<b-button href="#" variant="primary">View Item</b-button>
-	</b-card>
-</div>
+			<b-button href="#" variant="primary">View Item</b-button>
+		</b-card>
+	</b-col>
+</b-row>
 </template>
 
 <script>
@@ -43,7 +41,7 @@
 			async getItems() {
 				this.loading = true;
 				try {
-					await axios.get('https://jsonplaceholder.typicode.com/photos').then(
+					await axios.get('https://jsonplaceholder.typicode.com/posts').then(
 						response => {
 							this.items = response.data
 							this.loading = false
