@@ -10,19 +10,19 @@ export default new VueRouter({
 	base: '/',
 	linkActiveClass: "active",
 	routes: [
-	{
-	  // will match everything
-	  path: '*',
-	  component: NotFound
-	},
-	{
-		path: "/",
-		name: "Home",
-		component: Home
-	},{
-		path: "/post",
-		name: "Post",
-		component: Post
-	},
+		{
+			path: '*',
+	  		name: 'notfound',
+	  		component: NotFound
+		},
+		{
+			path: "/",
+			name: "Home",
+			component: Home
+		},{
+			path: "/posts",
+			name: "Post",
+			component: Post
+		},
 	]
 });
