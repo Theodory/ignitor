@@ -5,14 +5,14 @@
 		v-for="item in items"
 		:key="item.id"
 		:title="item.title"
-		img-src="https://picsum.photos/600/300/?image=25"
-		img-alt="Image"
+		:img-src="item.thumbnailUrl"
+		:img-alt="item.url"
 		img-top
 		style="max-width: 20rem;"
 		class="mb-2"
 		>
 		<b-card-text>
-			{{item}}
+			
 		</b-card-text>
 
 		<b-button href="#" variant="primary">View Item</b-button>
