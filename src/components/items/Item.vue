@@ -1,5 +1,10 @@
 <template>
-	<div>
+	<div v-if="loading">
+		<b-row >
+			<b-col class="text-center"> <div class="lds-dual-ring"></div> </b-col>
+		</b-row>
+	</div>
+	<div v-else-if="!loading">
 		<b-card
 		tag="article"
 		v-for="item in items"
@@ -38,16 +43,45 @@
 			async getItems() {
 				this.loading = true;
 				try {
-					axios.get('https://jsonplaceholder.typicode.com/photos').then(
+					await axios.get('https://jsonplaceholder.typicode.com/photos').then(
 						response => {
 							this.items = response.data
-							this.loading = false;
+							this.loading = false
 
 						})
 				} catch (error) {
-					return null;
+					this.loading = false
 				}
 			}
 		}
 	}
 </script>
+<style scoped>
+h1 {
+	margin-top: 25px !important;
+}
+.lds-dual-ring {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+}
+.lds-dual-ring:after {
+	content: " ";
+	display: block;
+	width: 46px;
+	height: 46px;
+	margin: 1px;
+	border-radius: 50%;
+	border: 5px solid #ccc;
+	border-color: #ccc transparent #ccc transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+</style>
