@@ -27,6 +27,7 @@
 		name: 'Item',
 		data(){
 			return {
+				loading: false,
 				items: []
 			}
 		},
@@ -35,9 +36,14 @@
 		},
 		methods: {
 			async getItems() {
+				this.loading = true;
 				try {
 					axios.get('https://jsonplaceholder.typicode.com/photos').then(
-						response => {this.items = response.data})
+						response => {
+							this.items = response.data
+							this.loading = false;
+
+						})
 				} catch (error) {
 					return null;
 				}
