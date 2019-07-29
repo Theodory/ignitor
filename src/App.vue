@@ -10,8 +10,7 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-   <router-view></router-view>
-
-  <b-container>  </b-container>
+  
+  <b-container> <router-view /> </b-container>
 </div>
 </template>

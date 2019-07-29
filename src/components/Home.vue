@@ -1,21 +1,21 @@
 <template>
-  <div class="hello">
-    <items/>
-  </div>
+	<div class="hello">
+		<items/>
+	</div>
 </template>
 
 <script>
-import items from '@/components/ItemList.vue'
+	import items from '@/components/ItemList.vue'
 
-export default {
-  name: 'Home',
-  components: {
-  	items
-  },
-  props: {
-    msg: String
-  }
-}
+	export default {
+		name: 'Home',
+		components: {
+			items
+		},
+		props: {
+			msg: String
+		}
+	}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
