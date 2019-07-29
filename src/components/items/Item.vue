@@ -17,10 +17,27 @@
 </template>
 
 <script>
+	import axios from 'axios'
+
 	export default{
-		props: {
-			items: Array
+		data(){
+			return {
+				items: []
+			}
 		},
-		name: 'Item'
+		name: 'Item',
+		methods: {
+			async getItems() {
+				try {
+					const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
+					console.log(response);
+				} catch (error) {
+
+				}
+			},
+			created(){
+				this.getItems()
+			}
+		}
 	}
 </script>

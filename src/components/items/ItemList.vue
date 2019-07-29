@@ -3,7 +3,7 @@
 		<h1>Items</h1>
 		<hr />
 		<b-row >
-			<b-col class="text-center"> <div class="lds-dual-ring"></div> </b-col>
+			<b-col v-if="loading" class="text-center"> <div class="lds-dual-ring"></div> </b-col>
 		</b-row>
 		<div>
 			<Items/>
@@ -15,6 +15,11 @@
 	import Items from '@/components/items/Item.vue'
 
 	export default{
+		data() {
+			return {
+				loading: false,
+			};
+		},
 		name: 'items',
 		data() {
 			return {
@@ -23,10 +28,6 @@
 		components: {
 			Items
 		},
-		methods: {
-			created(){
-			}
-		}
 
 	}
 </script>
