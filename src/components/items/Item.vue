@@ -4,7 +4,7 @@
 		tag="article"
 		v-for="item in items"
 		:key="item.id"
-		title="Card Title"
+		:title="item.title"
 		img-src="https://picsum.photos/600/300/?image=25"
 		img-alt="Image"
 		img-top
@@ -37,7 +37,7 @@
 			async getItems() {
 				try {
 					axios.get('https://jsonplaceholder.typicode.com/photos').then(
-						response => {this.items = response})
+						response => {this.items = response.data})
 				} catch (error) {
 					return null;
 				}
