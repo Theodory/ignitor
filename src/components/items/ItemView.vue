@@ -24,7 +24,6 @@
 		data(){
 			return {
 				post: {},
-				id: '',
 				loading: false
 			}
 		},
@@ -36,11 +35,10 @@
 			async fetchItem() {
 				this.loading = true
 				try {
-					this.id = this.$route.params.id
 
-					await axios.get('https://jsonplaceholder.typicode.com/posts',{
-						id: this.id
-					}).then(
+					await axios.get('https://jsonplaceholder.typicode.com/posts/'+
+						this.id
+					).then(
 					response => {
 						this.post = response.data
 						this.loading = false
@@ -51,7 +49,6 @@
 				}
 			},
 			created() {
-				this.id = this.$route.params.id;
 				this.fetchItem();
 			}
 		}
