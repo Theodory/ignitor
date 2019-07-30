@@ -19,6 +19,7 @@
 	import axios from 'axios'
 
 	export default{
+		props: ['id'],
 		name: 'ItemView',
 		data(){
 			return {
