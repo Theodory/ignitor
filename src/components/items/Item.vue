@@ -17,8 +17,9 @@
 				{{item.body}}
 			</b-card-text>
 
-			<b-button href="#" variant="primary">View Item</b-button>
-		</b-card>
+			<router-link class="btn btn-primary" :to="'/items/' + item.id">
+			View Item</router-link>
+		</b-card>:
 	</b-col>
 </b-row>
 </template>

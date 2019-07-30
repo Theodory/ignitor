@@ -2,6 +2,7 @@ import Vue from "vue"
 import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import Post from './components/PostList.vue'
+import Item from './components/items/ItemView.vue'
 import NotFound from './components/Notfound.vue'
 Vue.use(VueRouter)
 
@@ -23,6 +24,12 @@ export default new VueRouter({
 		path: "/posts",
 		name: "Post",
 		component: Post
+	},
+	{
+		path: "/items/:id",
+		name: "Item",
+		props: true,
+		component: Item
 	},
 	]
 });

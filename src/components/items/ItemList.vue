@@ -16,7 +16,6 @@
 	export default{
 		data() {
 			return {
-				
 			};
 		},
 		name: 'items',
@@ -26,3 +25,4 @@
 
 	}
 </script>
+
