@@ -17,8 +17,8 @@
 				{{item.body}}
 			</b-card-text>
 
-			<router-link class="btn btn-primary" :to="'/items/' + item.id">
-			View Item</router-link>
+			<button class="btn btn-primary"  @click="singleItem(item.id)">
+			View Item</button>
 		</b-card>:
 	</b-col>
 </b-row>
@@ -51,6 +51,9 @@
 				} catch (error) {
 					this.loading = false
 				}
+			},
+			singleItem(id){
+				this.$route.push('items/'+id)
 			}
 		}
 	}
