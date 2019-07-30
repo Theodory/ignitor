@@ -53,7 +53,7 @@
 				}
 			},
 			singleItem(id){
-				this.$route.push('items/'+id)
+				this.$router.push('items/'+id)
 			}
 		}
 	}
