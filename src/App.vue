@@ -11,6 +11,10 @@
     </b-collapse>
   </b-navbar>
   
-  <b-container> <router-view /> </b-container>
+  <b-container>
+         <transition name="fade" mode="out-in">
+    <router-view />
+  </transition>
+</b-container>
 </div>
 </template>

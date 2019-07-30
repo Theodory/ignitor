@@ -5,7 +5,7 @@
 		</b-row>
 		<b-row v-if="!loading">
 			<b-col>
-				<h1><button @click="back()">Back</button>{{ post.title }}</h1>
+				<h1><button class="btn btn-primary btn-xs" @click="back()">Back</button>{{ post.title }}</h1>
 				<h4 class="text-muted">
 				</h4>
 				<hr />
